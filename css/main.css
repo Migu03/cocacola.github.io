@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: tahoma;
+}
+body{
+    width: 1200px;
+    margin: auto;
+    border-radius: 20px;
+    background-color: rgb(243, 76, 76);
+}
+.logo img{
+    width: 140px;
+}
+.container{
+    background-color: rgb(255, 255, 255);
+    height: 650px;
+    margin-top: 40px;
+}
+header{
+    display: flex;
+}
+.menu ul{
+    display: flex;
+    margin: 0px 0px 0px 150px;
+}
+.menu ul li{
+    margin: 40px 30px;
+    list-style: none;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: black;
+    font-family: tahoma;
+}
+.menu ul li a:hover{
+    text-decoration: underline red 2px;
+}
+i{
+    font-size: 30px;
+    margin-left: 15px;
+}
+header input{
+    padding: 7px 20px;
+    border-radius: 20px;
+    font-family: tahoma;
+}
+.buy{
+    margin: 30px 0px 0px 130px;
+}
+.sanpham img{
+    width: 200px;
+    margin: 40px 100px;
+}
+.main{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 20px 50px;
+}
+.nutri{
+    display: flex;
+}
+.text h3{
+    color: rgb(224, 13, 13);
+    margin: 20px 0px;
+    font-size: 30px;
+}
+.text p{
+    font-size: 14px;
+    color: gray;
+}
+.text h2{
+    margin: 20px 0px;
+    font-size: 17px;
+}
+.box1{
+    width: 140px;
+    width: 100px;
+    margin: 5px 5px 20px;
+}
+.box1 p{
+    color: #fff;
+    text-align: center;
+    background-color: rgb(255, 82, 82);
+    padding: 5px 0px;
+}
+.box1 h1{
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(233, 0, 0);
+    padding: 20px 0px;
+}
+#BUY{
+    font-family: tahoma;
+    padding: 5px 30px;
+    background-color: rgb(232, 53, 53);
+    color: #fff;
+    border-radius: 20px;
+    margin: 40px 0px;
+}
+#BUY:hover{
+    background-color: rgb(176, 16, 16);
+}
+footer p{
+    text-align: center;
+    font-size: 12px;
+    color: grey;
+}

@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 1100px;
+    margin: auto;
+    border-radius: 20px;
+    background-image: url(/imgs/bg3.jpg);
+}
+.logo img{
+    width: 100px;
+    margin: 35px 0px 0px 380px;
+}
+.container{
+    background-image: url(/imgs/home.jpg);
+    height: 650px;
+    margin-top: 40px;
+    border-radius: 50px;
+}
+header{
+    display: flex;
+}
+.menu ul{
+    display: flex;
+    margin: 0px 0px 0px 20px;
+}
+.menu ul li{
+    margin: 40px 30px;
+    list-style: none;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: tahoma;
+}
+.menu ul li a:hover{
+    text-decoration: underline rgb(255, 255, 255) 2px;
+}
+.main{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 20px 50px;
+    height: 350px;
+}
+.text h3{
+    color: rgb(0, 0, 0);
+    margin: 20px 0px;
+    font-size: 50px;
+    font-family: 'Cookie', cursive;
+}
+.text p{
+    font-family: tahoma;
+    font-size: 15px;
+}
+.sanpham img{
+    width: 190px;
+    margin: 40px 100px;
+    margin-left: 30%;
+}
+.box1 img{
+    width: 60px;
+    margin-left: 2px;
+}
+.box2 img{
+    width: 70px;
+    margin-left: 7px;
+}
+.box3 img{
+    width: 66px;
+    margin-left: 9px;
+}
+.footer{
+    width: 340px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 140px;
+    margin: 0px 50px;
+    background-color: #fff;
+    padding: 20px 0px 0px 45px;
+    border-radius: 30px 30px 0px 0px;
+    box-shadow:10px -13px 30px 0px;
+}
+.footer p{
+    font-size: 10px;
+    font-family: tahoma;
+    margin: 5px;
+}

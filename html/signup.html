@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sign up</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/signup.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="sign-up">
+        <h1>Sign Up</h1>
+        <form method="post" id="dangKy" action="/html/login.html">
+            <div class="input-box">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="user" placeholder="User"><br>
+            </div>
+            <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="text" id="gmail" placeholder="Gmail"><br>
+            </div>
+            <div class="input-box">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" id="phone" placeholder="Phone"><br>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Password">
+                <span id="eye" onclick="hidePass()">
+                    <i id="hide1" class="fa-solid fa-eye"></i>
+                    <i id="hide2" class="fa-solid fa-eye-slash"></i>
+                </span>
+            </div>
+            <div class="input-box">
+                <input type="password" id="repass" placeholder="Repass">
+                <span id="eye" onclick="hidePass1()">
+                    <i id="hide3" class="fa-solid fa-eye"></i>
+                    <i id="hide4" class="fa-solid fa-eye-slash"></i>
+                </span>
+            </div>
+            <span id="error"></span>
+            <button id="sign-up" type="submit">Sign up</button>
+        </form>
+    </div>
+</body>
+<script>
+    let dangKy = document.querySelector('#dangKy')
+    let user = document.querySelector('#user')
+    let gmail = document.querySelector('#gmail')
+    let phone = document.querySelector('#phone')
+    let password = document.querySelector('#password')
+    let repass = document.querySelector('#repass')
+    let hide1 = document.querySelector('#hide1')
+    let hide2 = document.querySelector('#hide2')
+    let hide3 = document.querySelector('#hide3')
+    let hide4 = document.querySelector('#hide4')
+    var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+    var formEmail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    function showError(className, messenge, color) {
+        let element = document.querySelector(className);
+        element.style.color = color;
+        element.innerHTML = messenge;
+    }
+
+    function hidePass() {
+        if (password.type === 'password') {
+            password.type = 'text';
+            hide1.style.display = "block";
+            hide2.style.display = "none";
+        } else {
+            password.type = 'password';
+            hide1.style.display = "none";
+            hide2.style.display = "block";
+        }
+    }
+    function hidePass1() {
+        if (repass.type === 'password') {
+            repass.type = 'text';
+            hide3.style.display = "block";
+            hide4.style.display = "none";
+        } else {
+            repass.type = 'password';
+            hide3.style.display = "none";
+            hide4.style.display = "block";
+        }
+    }
+
+    dangKy.addEventListener('submit', function (event) {
+        event.preventDefault()
+        function check() {
+            if (user.value.trim() == "") {
+                showError("#error", "Vui lòng nhập username !", "red")
+                return false;
+            } else if (gmail.value.trim() == "") {
+                showError("#error", "Vui lòng nhập gmail!", "red")
+                return false;
+            } else if (!formEmail.test(gmail.value)) {
+                showError("#error", "Vui lòng điền đúng gmail !", "red")
+                return false;
+            } else if (phone.value.trim() == "") {
+                showError("#error", "Vui lòng nhập số điện thoại !", "red")
+                return false;
+            } else if (password.value.trim() == "") {
+                showError("#error", "Vui lòng nhập password !", "red")
+                return false;
+            } else if (repass.value.trim() == "") {
+                showError("#error", "Vui lòng nhập lại password !", "red")
+                return false;
+            } else if (password.value !== repass.value) {
+                showError("#error", "Password nhập lại không chính xác !", "red")
+                return false;
+            } else if (vnf_regex.test(phone.value) == false) {
+                showError("#error", "Số điện thoại không đúng định dạng !", "red")
+                return false;
+            }
+            return true;
+        }
+        if (check()) {
+            alert('Đăng ký thành công !')
+            window.location = "http://127.0.0.1:5500/html/login.html";
+        }
+    })
+</script>
+
+</html>

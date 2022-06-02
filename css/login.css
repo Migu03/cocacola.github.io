@@ -1,0 +1,91 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-image: url(/imgs/bg5.jpg);
+}
+.main{
+    width: 1000px;
+    margin: 0 auto ;
+    height: 565px;
+    background-color: #fff;
+    margin-top: 75px;
+    border-radius: 10px;
+    display: flex;
+}
+.img img{
+    width: 400px;
+    border-radius: 10px 0px 0px 10px;
+}
+.login{
+    width: 600px;
+}
+.login img{
+    width: 250px;
+    margin-left: 180px;
+}
+.login p{
+    font-family: 'Sriracha', cursive;
+    font-size: 15px;
+    text-align: center;
+}
+.login p a{
+    text-decoration: none;
+}
+form{
+    margin-left: 150px;
+}
+#user{
+    font-family: 'NTR', sans-serif;
+    width: 250px;
+    margin: 20px;
+    border: none;
+    font-size: 17px;
+    background-color: #D9D9D9;
+    padding: 8px;
+    margin: 10px 0px 10px 20px;
+    border-radius: 5px;
+}
+#password{
+    font-family: 'NTR', sans-serif;
+    width: 250px;
+    margin: 10px 0px 10px 20px;
+    border: none;
+    background-color: #D9D9D9;
+    padding: 8px;
+    font-size: 17px;
+    border-radius: 5px;
+}
+#login{
+    background-color: #F61A1A;
+    font-size: 32px;
+    width: 265px;
+    border: none;
+    margin: 20px 20px 5px 20px;
+    padding: 7px 0px;
+    border-radius: 15px;
+    color: #fff;
+}
+#login:hover{
+    background-color: #d40c0c;
+}
+#error-user{
+    margin-left: 30px;
+    font-family: tahoma;
+    font-size: 12px;
+}
+#error-pass{
+    margin-left: 30px;
+    font-family: tahoma;
+    font-size: 12px;
+}
+#eye{
+    position: absolute;
+    margin: 30px 5px;
+    margin-right: 20px;
+    color: #d40c0c;
+}
+#hide1{
+    display: none;
+}

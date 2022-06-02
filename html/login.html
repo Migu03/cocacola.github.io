@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login-Coca Cola</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/login.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=NTR&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="img">
+            <img src="/imgs/2.jpg" alt="">
+        </div>
+        <div class="login">
+            <img src="/imgs/logo.png" alt="">
+            <form method="post" id="DangNhap">
+                <input type="text" placeholder="Username" id="user"> <br>
+                <span id="error-user"></span> <br>
+                <input type="password" placeholder="Password" id="password">
+                <span id="eye" onclick="hidePass()">
+                    <i id="hide1" class="fa-solid fa-eye"></i>
+                    <i id="hide2" class="fa-solid fa-eye-slash"></i>
+                </span>
+                <br>
+                <span id="error-pass"></span> <br>
+                <input type="submit" value="Login" id="login">
+            </form>
+            <p>Forgot password ? <a href="/html/signup.html">Sign Up</a></p>
+        </div>
+    </div>
+</body>
+<script>
+    let DangNhap = document.querySelector('#DangNhap')
+    let user = document.querySelector('#user')
+    let password = document.querySelector('#password')
+    let hide1 = document.querySelector('#hide1')
+    let hide2 = document.querySelector('#hide2')
+
+    function showError(className, messenge, color) {
+        let element = document.querySelector(className);
+        element.style.color = color;
+        element.innerHTML = messenge;
+    }
+
+    function hidePass() {
+        if (password.type === 'password') {
+            password.type = 'text';
+            hide1.style.display = "block";
+            hide2.style.display = "none";
+        } else {
+            password.type = 'password';
+            hide1.style.display = "none";
+            hide2.style.display = "block";
+        }
+    }
+
+    DangNhap.addEventListener('submit', function (event) {
+        event.preventDefault()
+        function check() {
+            if (user.value.trim() == "") {
+                showError("#error-user", "Vui lòng nhập username !", "red")
+                return false;
+            } else if (password.value.trim() == "") {
+                showError("#error-pass", "Vui lòng nhập password !", "red")
+                return false;
+            }
+            return true;
+        }
+        if (check()) {
+            window.location = "http://127.0.0.1:5500/html/Homee.html";
+        }
+    }) 
+</script>
+
+</html>
