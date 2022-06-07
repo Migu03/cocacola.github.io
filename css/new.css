@@ -11,7 +11,7 @@
 }
 header{
     display: flex;
-    margin-left: 27%;
+    margin-left: 22%;
 }
 .menu ul{
     display: flex;
@@ -70,6 +70,6 @@ footer p{
     margin-top: 50px;
 }
 .img img{
-    width: 355px;
-    height: 500px;
+    width: 330px;
+    height: 450px;
 }
